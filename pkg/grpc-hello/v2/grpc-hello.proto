@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ellulpatrick.hello.v1;
+option go_package = "grpc-hello/v2;grpc-hello";
+
+service HelloService {
+    rpc SayHello(SayHelloRequest) returns (SayHelloResponse);
+}
+
+message SayHelloRequest {
+    string name = 1;
+    int64 delay = 2;
+}
+
+message SayHelloResponse {
+    string OBSOLETE_greeting = 1 [deprecated=true];
+    string greeting = 2;
+}
