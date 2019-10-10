@@ -23,7 +23,7 @@ func main() {
 		log.Fatalf("Could not set up connection: %v", err)
 	}
 
-	log.Printf("We have a magical connection objectto %v...", serverAddr)
+	log.Printf("We have a magical connection object to %v...", serverAddr)
 
 	helloClient := grpc_hello.NewHelloServiceClient(conn)
 
@@ -31,7 +31,6 @@ func main() {
 	time.Sleep(3 * time.Second) // to offset
 	loop("Yellow", 10 * time.Second, helloClient)
 }
-
 
 func loop(name string, clientSleep time.Duration, helloClient grpc_hello.HelloServiceClient) {
 	for {

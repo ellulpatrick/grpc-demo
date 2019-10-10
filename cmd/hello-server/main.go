@@ -37,6 +37,7 @@ func main() {
 		if err != nil {
 			log.Fatalf("failed to listen: %v", err)
 		}
+
 		log.Printf("grpcSrv V1 Listening on %v", listenAddr)
 		err = grpcSvr.Serve(listener) // Blocks
 		log.Printf("grpcSvr returned. Err: %v", err)
