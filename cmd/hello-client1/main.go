@@ -52,7 +52,8 @@ func callServer(name string, helloClient grpc_hello.HelloServiceClient) error {
 
 	log.Printf("%v: Calling Server.", name)
 	ctx := context.Background()
-	context.WithTimeout(ctx, 15 * time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 15 * time.Second)
+	defer cancel()
 
 	response, err := helloClient.SayHello(ctx,
 		&grpc_hello.SayHelloRequest{
