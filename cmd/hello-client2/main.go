@@ -54,7 +54,7 @@ func callServer(name string, delay int64, helloClient grpc_hello.HelloServiceCli
 
 	log.Printf("%v: Calling Server. Delay %v", name, delay)
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, 15 * time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 30 * time.Second)
 	defer cancel()
 
 	response, err := helloClient.SayHello(ctx,
