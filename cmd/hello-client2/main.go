@@ -29,8 +29,8 @@ func main() {
 	helloClient := grpc_hello.NewHelloServiceClient(conn)
 
 	go loop("Bluey", 4 * time.Second, 6, helloClient)
-	time.Sleep(3 * time.Second) // to offset
-	loop("Bingo", 10 * time.Second, 0, helloClient)
+	time.Sleep(1 * time.Second) // to offset
+	loop("Bingo", 2 * time.Second, 8, helloClient)
 }
 
 
